@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Divilo</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div class="app-container">
+
+    <h1>Divilo 💸</h1>
+
+    <!-- CARTERAS -->
+    <div class="card-section">
+
+      <div class="top-row">
+
+        <input 
+          id="nuevaCartera" 
+          placeholder="Nueva cartera (ej: Viaje)">
+
+        <button class="small-create" onclick="crearCartera()">
+          Crear
+        </button>
+
+        <button class="small-reset" onclick="resetGeneral()">
+          RESETEAR TODO
+        </button>
+
+      </div>
+
+      <div class="row-select">
+        <select id="selectorCartera" onchange="cambiarCartera()"></select>
+
+        <button class="small-btn" onclick="editarCartera()">✏️</button>
+        <button class="small-btn borrar" onclick="borrarCartera()">🗑️</button>
+      </div>
+
+    </div>
+
+    <hr>
+
+    <!-- GASTOS -->
+    <input id="descripcion" placeholder="Descripción">
+    <input id="cantidad" type="number" placeholder="Cantidad">
+    <input id="pagador" placeholder="Quién pagó">
+
+    <button onclick="agregarGasto()">Añadir gasto</button>
+
+    <button onclick="resetear()" class="reset">
+      Reset cartera
+    </button>
+
+    <hr>
+
+    <ul id="listaGastos"></ul>
+
+    <h4>Balance</h4>
+    <div id="balance"></div>
+
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
